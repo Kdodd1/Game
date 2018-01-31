@@ -8,7 +8,7 @@ public class Game extends Canvas implements Runnable{
 
     private static final long serialVersionUID = 4983030414942140047L;
 
-    public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
+    public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9; //Aspect Ratio
 
     public Game(){
         new Window(WIDTH, HEIGHT, "Deeeeez NUUUUUTS", this);
