@@ -11,7 +11,7 @@ public class Game extends Canvas implements Runnable{
     public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9; //Aspect Ratio
 
     public Game(){
-        new Window(WIDTH, HEIGHT, "Deeeeez NUUUUUTS", this);
+        new Window(WIDTH, HEIGHT, "Deeeeez NUUUUTS", this);
     }
 
     public synchronized void start(){
