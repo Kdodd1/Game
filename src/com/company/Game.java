@@ -15,9 +15,14 @@ public class Game extends Canvas implements Runnable {
 
     private Thread thread; //single threaded game
     private boolean running = false;
+    private Handler handler;
 
     public Game() {
         new Window(WIDTH, HEIGHT, "Deeeeez NUUUUTS", this);
+
+        handler = new Handler();
+
+        handler.addObject(new Player(100, 100, ID.Player));
     }
 
     public synchronized void start() {
@@ -35,7 +40,6 @@ public class Game extends Canvas implements Runnable {
             e.printStackTrace();
         }
     }
-
 
     public void run() {
         long lastTime = System.nanoTime();
@@ -67,6 +71,7 @@ public class Game extends Canvas implements Runnable {
     }
 
     private void tick() {
+        handler.tick();
 
     }
 
@@ -78,8 +83,11 @@ public class Game extends Canvas implements Runnable {
         }
 
         Graphics g = bs.getDrawGraphics();
+
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, WIDTH, HEIGHT);
+
+        handler.render(g);
 
         g.dispose();
         bs.show();
